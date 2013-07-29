@@ -24,7 +24,12 @@ PRODUCT_PACKAGES := \
 	Exchange2 \
 	FusedLocation \
 	Mms \
+	OpenWnn \
+	libWnnEngDic \
+	libWnnJpnDic \
+	libwnndict \
 	Phone \
+	PinyinIME \
 	Protips \
 	SystemUI \
 	Launcher2 \

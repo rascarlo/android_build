@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
     DefaultContainerService \
     Home \
     KeyChain \
+    PicoTts \
     SharedStorageBackup \
     TelephonyProvider \
     UserDictionaryProvider \
