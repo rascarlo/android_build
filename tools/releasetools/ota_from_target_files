@@ -485,19 +485,24 @@ else if get_stage("%(bcb_dev)s", "stage") == "3/3" then
   device_specific.FullOTA_InstallBegin()
 
   script.ShowProgress(0.5, 0)
-  script.Print("rastakat")
-  script.Print("by rascarlo")
-  script.Print("don't involve rasta in your say-say")
+  script.Print("OptiKat - Android 4.4.4")
+  script.Print("Created by TanmayNarang from XDA-Developers")
+  script.Print("Thank you to rascarlo for your amazing ROM as a base!")
 
   if OPTIONS.wipe_user_data:
+    script.Print("Formatting /data...")
     script.FormatPartition("/data")
 
   if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
 
+  script.Print("Formatting /system...")
   script.FormatPartition("/system")
+
+  script.Print("Mounting /system...")
   script.Mount("/system")
 #  script.UnpackPackageDir("recovery", "/system")
+  script.Print("Flashing system files...")
   script.UnpackPackageDir("system", "/system")
 
   symlinks = CopySystemFiles(input_zip, output_zip)
@@ -508,6 +513,7 @@ else if get_stage("%(bcb_dev)s", "stage") == "3/3" then
 #  MakeRecoveryPatch(OPTIONS.input_tmp, output_zip, recovery_img, boot_img)
 
   Item.GetMetadata(input_zip)
+  script.Print("Setting permissions...")
   Item.Get("system").SetPermissions(script)
 
   common.CheckSize(boot_img.data, "boot.img", OPTIONS.info_dict)
@@ -515,9 +521,12 @@ else if get_stage("%(bcb_dev)s", "stage") == "3/3" then
   script.ShowProgress(0.2, 0)
 
   script.ShowProgress(0.2, 10)
+  script.Print("Flashing kernel...")
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 0)
+  script.Print("Flash complete!")
+  script.Print("Thank you for flashing OptiKat!")
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
