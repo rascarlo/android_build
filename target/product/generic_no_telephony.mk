@@ -20,7 +20,6 @@
 PRODUCT_PACKAGES := \
     Bluetooth \
     BluetoothMidiService \
-    Music \
     MusicFX \
     OneTimeInitializer \
     SystemUI \
