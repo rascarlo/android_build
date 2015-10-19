@@ -31,7 +31,6 @@ PRODUCT_PACKAGES := \
 	librs_jni \
 	LiveWallpapersPicker \
 	Mms \
-	Protips \
 	rild \
 	SdkSetup \
 	SmokeTest \
