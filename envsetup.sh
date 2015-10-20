@@ -473,7 +473,7 @@ function print_lunch_menu()
     echo
     echo "You're building on" $uname
     echo
-    echo "Lunch menu... pick a combo:"
+    echo "Lunch menu... pick a Nexus:"
 
     local i=1
     local choice
@@ -517,7 +517,7 @@ function lunch()
     if [ -z "$selection" ]
     then
         echo
-        echo "Invalid lunch combo: $answer"
+        echo "Invalid lunch Nexus: $answer"
         return 1
     fi
 
